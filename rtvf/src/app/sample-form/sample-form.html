@@ -1,5 +1,16 @@
 <form (ngSubmit)="submit()">
-  <div><app-text-input name="title" [(value)]="title"></app-text-input></div>
-  <div><app-date-input name="date" [(value)]="date"></app-date-input></div>
-  <app-button label="Submit" type="submit"></app-button>
+  <fieldset>
+    <legend>Sample Form</legend>
+    <div>
+      <div>title</div>
+      <div>
+        <app-text-input name="title" [(value)]="title"></app-text-input>
+      </div>
+    </div>
+    <div>
+      <div>date</div>
+      <div><app-date-input name="date" [(value)]="date"></app-date-input></div>
+    </div>
+    <app-button label="Submit" type="submit"></app-button>
+  </fieldset>
 </form>
