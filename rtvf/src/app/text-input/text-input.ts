@@ -1,8 +1,9 @@
-import { Component, input, model } from '@angular/core';
+import { Component, effect, input, model } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-text-input',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './text-input.html',
   styleUrl: './text-input.scss',
 })
