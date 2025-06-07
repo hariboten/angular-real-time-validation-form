@@ -1,1 +1,8 @@
-<input type="date" [name]="name()" [(ngModel)]="value">
+<input
+  type="date"
+  [name]="name()"
+  [valueAsDate]="value()"
+  [required]="required()"
+  (change)="setValue(inputElm.valueAsDate)"
+  #inputElm
+/>

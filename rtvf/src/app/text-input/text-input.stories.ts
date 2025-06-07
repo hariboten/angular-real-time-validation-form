@@ -20,7 +20,7 @@ export const Text01InitialValue: StoryObj<TextInput> = {
   },
 };
 
-export const Text01PlaceHolder: StoryObj<TextInput> = {
+export const Text02PlaceHolder: StoryObj<TextInput> = {
   args: {
     name: 'placeholder',
     placeholder: 'Enter text here',

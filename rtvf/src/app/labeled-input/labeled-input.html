@@ -2,5 +2,6 @@
   {{ label() }}
 </div>
 <div>
+  <app-required-mark [required]="required()" [filled]="filled()"></app-required-mark>
   <ng-content></ng-content>
 </div>

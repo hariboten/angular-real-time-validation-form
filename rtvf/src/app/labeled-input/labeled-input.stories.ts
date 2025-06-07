@@ -6,11 +6,25 @@ export default {
   component: LabeledInput,
 } as Meta<LabeledInput>;
 
-export const Default: StoryObj<LabeledInput> = {
+export const Labeled00Default: StoryObj<LabeledInput> = {
   render: (args) => ({
     props: args,
     template: `
       <app-labeled-input [label]="label">
+        <input type="text" placeholder="Enter text here" />
+      </app-labeled-input>
+    `,
+  }),
+  args: {
+    label: 'Example Input',
+  },
+};
+
+export const Labeled01Required: StoryObj<LabeledInput> = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <app-labeled-input [label]="label" required="true">
         <input type="text" placeholder="Enter text here" />
       </app-labeled-input>
     `,

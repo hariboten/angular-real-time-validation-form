@@ -1,4 +1,4 @@
-import { Component, model } from '@angular/core';
+import { Component, input, model } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './date-input.scss',
 })
 export class DateInput {
-  name = model<string>('');
+  readonly name = input.required<string>();
   value = model<Date | null>(null);
+  readonly required = input<boolean>(false);
+
+  setValue(date: Date | null) {
+    this.value.set(date);
+  }
 }

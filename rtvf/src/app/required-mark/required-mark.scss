@@ -1,0 +1,13 @@
+:host {
+  display: inline;
+  color: red;
+  font-weight: bold;
+
+  &:not(.required) {
+    visibility: hidden;
+  }
+
+  &.filled {
+    color: gray;
+  }
+}

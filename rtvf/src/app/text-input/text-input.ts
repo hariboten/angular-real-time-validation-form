@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class TextInput {
   readonly value = model<string>('');
-  readonly name = input<string>('');
+  readonly name = input.required<string>();
   readonly placeholder = input('');
+  readonly required = input<boolean>(false);
 }

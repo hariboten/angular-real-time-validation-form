@@ -1,9 +1,8 @@
 import { Component, computed, output, signal } from '@angular/core';
-import { TextInput } from '../text-input/text-input';
-import { DateInput } from '../date-input/date-input';
 import { Button } from '../button/button';
 import { FormsModule } from '@angular/forms';
-import { LabeledInput } from '../labeled-input/labeled-input';
+import { LabeledTextInput } from '../labeled-text-input/labeled-text-input';
+import { LabeledDateInput } from '../labeled-date-input/labeled-date-input';
 
 interface SampleFormModel {
   title: string;
@@ -12,7 +11,7 @@ interface SampleFormModel {
 
 @Component({
   selector: 'app-sample-form',
-  imports: [TextInput, Button, FormsModule, DateInput, LabeledInput],
+  imports: [Button, FormsModule, LabeledTextInput, LabeledDateInput],
   templateUrl: './sample-form.html',
   styleUrl: './sample-form.scss',
 })
