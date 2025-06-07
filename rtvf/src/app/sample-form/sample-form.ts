@@ -3,6 +3,7 @@ import { TextInput } from '../text-input/text-input';
 import { DateInput } from '../date-input/date-input';
 import { Button } from '../button/button';
 import { FormsModule } from '@angular/forms';
+import { LabeledInput } from '../labeled-input/labeled-input';
 
 interface SampleFormModel {
   title: string;
@@ -11,7 +12,7 @@ interface SampleFormModel {
 
 @Component({
   selector: 'app-sample-form',
-  imports: [TextInput, Button, FormsModule, DateInput],
+  imports: [TextInput, Button, FormsModule, DateInput, LabeledInput],
   templateUrl: './sample-form.html',
   styleUrl: './sample-form.scss',
 })
