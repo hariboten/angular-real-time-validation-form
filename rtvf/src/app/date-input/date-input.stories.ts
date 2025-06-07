@@ -8,12 +8,14 @@ export default {
 
 export const Date00Default: StoryObj<DateInput> = {
   args: {
-    value: new Date(),
+    name: 'default',
+    value: null,
   },
 };
 
 export const Date01InitialValue: StoryObj<DateInput> = {
   args: {
+    name: 'initial',
     value: new Date('2023-01-01'),
   },
 };

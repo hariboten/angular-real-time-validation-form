@@ -1,4 +1,4 @@
-import { Component, model } from '@angular/core';
+import { Component, input, model } from '@angular/core';
 
 @Component({
   selector: 'app-text-input',
@@ -8,4 +8,6 @@ import { Component, model } from '@angular/core';
 })
 export class TextInput {
   readonly value = model<string>('');
+  readonly name = input<string>('');
+  readonly placeholder = input('');
 }

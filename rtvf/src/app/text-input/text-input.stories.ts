@@ -8,12 +8,21 @@ export default {
 
 export const Text00Default: StoryObj<TextInput> = {
   args: {
+    name: 'default',
     value: '',
   },
 };
 
 export const Text01InitialValue: StoryObj<TextInput> = {
   args: {
+    name: 'initial',
     value: 'test',
+  },
+};
+
+export const Text01PlaceHolder: StoryObj<TextInput> = {
+  args: {
+    name: 'placeholder',
+    placeholder: 'Enter text here',
   },
 };

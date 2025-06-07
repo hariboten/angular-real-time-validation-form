@@ -7,5 +7,6 @@ import { Component, model } from '@angular/core';
   styleUrl: './date-input.scss',
 })
 export class DateInput {
+  name = model<string>('');
   value = model<Date | null>(null);
 }

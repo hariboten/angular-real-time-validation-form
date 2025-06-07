@@ -8,5 +8,7 @@ import { Component, input, model, output } from '@angular/core';
 })
 export class Button {
   label = input('');
+  type = input<'button' | 'submit' | 'reset'>('button');
+  value = input('');
   clicked = output<void>();
 }

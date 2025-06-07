@@ -1,1 +1,5 @@
-<p>sample-form works!</p>
+<form (ngSubmit)="submit()">
+  <div><app-text-input name="title" [(value)]="title"></app-text-input></div>
+  <div><app-date-input name="date" [(value)]="date"></app-date-input></div>
+  <app-button label="Submit" type="submit"></app-button>
+</form>
