@@ -1,1 +1,1 @@
-# angular-real-time-validation-form
+# Angular signal apiによるリアルタイムバリデーションの実装
