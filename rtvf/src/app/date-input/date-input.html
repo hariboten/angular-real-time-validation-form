@@ -1,7 +1,7 @@
 <input
   type="date"
-  [name]="name()"
+  [attr.name]="name()"
   [valueAsDate]="value()"
-  (change)="setValue(inputElm.valueAsDate)"
+  (input)="setValue(inputElm.valueAsDate)"
   #inputElm
 />

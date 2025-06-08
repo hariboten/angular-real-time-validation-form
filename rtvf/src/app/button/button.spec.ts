@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Button } from './button';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('Button', () => {
   let component: Button;
@@ -8,16 +9,24 @@ describe('Button', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Button]
-    })
-    .compileComponents();
+      imports: [Button],
+      providers: [provideZonelessChangeDetection()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Button);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    await fixture.whenStable();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should click', () => {
+    const button = fixture.nativeElement.querySelector('button');
+
+    let clicked = false;
+    component.clicked.subscribe(() => {
+      clicked = true;
+    });
+    button.click();
+
+    expect(clicked).toBeTrue();
   });
 });
