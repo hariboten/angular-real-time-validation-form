@@ -1,9 +1,16 @@
-import { Meta, StoryObj } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { SampleForm } from './sample-form';
+import { SampleFormValidator } from './sample-form-validator';
+import { SampleFormState } from './sample-form-state';
 
 export default {
   title: 'Forms/SampleForm',
   component: SampleForm,
+  decorators: [
+    moduleMetadata({
+      providers: [SampleFormState, SampleFormValidator],
+    }),
+  ],
 } as Meta<SampleForm>;
 
 const submittionRender = (args: any) => ({

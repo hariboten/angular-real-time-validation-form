@@ -1,17 +1,11 @@
-import {
-  Component,
-  computed,
-  output,
-  signal,
-  input,
-  OnInit,
-} from '@angular/core';
+import { Component, output, input, OnInit, inject } from '@angular/core';
 import { Button } from '../button/button';
 import { FormsModule } from '@angular/forms';
 import { LabeledInput } from '../labeled-input/labeled-input';
 import { TextInput } from '../text-input/text-input';
-import { isNotBlank } from '../string-utils';
 import { DateInput } from '../date-input/date-input';
+import { SampleFormState } from './sample-form-state';
+import { SampleFormValidator } from './sample-form-validator';
 
 export interface SampleFormModel {
   title: string;
@@ -25,42 +19,24 @@ export interface SampleFormModel {
   styleUrl: './sample-form.scss',
 })
 export class SampleForm implements OnInit {
-  // 初期値
+  /** フォームの値 */
+  state = inject(SampleFormState);
+
+  /** フォームの初期値 */
   readonly initial = input<SampleFormModel>({
     title: '',
     date: null,
   });
-
-  // フォームの値
-  title = signal(this.initial().title);
-  date = signal<Date | null>(this.initial().date);
-
   ngOnInit(): void {
-    this.title.set(this.initial().title);
-    this.date.set(this.initial().date);
+    this.state.setValues(this.initial());
   }
 
-  // 送信イベント
+  /** Submitボタンを押した */
   submitted = output<SampleFormModel>();
-
   submit(): void {
-    this.submitted.emit(this.sampleForm());
+    this.submitted.emit(this.state.getValues());
   }
 
-  readonly sampleForm = computed<SampleFormModel>(() => {
-    return {
-      title: this.title(),
-      date: this.date(),
-    };
-  });
-
-  // バリデーション
-  hasTitleValue = computed(() => {
-    return isNotBlank(this.title());
-  });
-
-  hasDateValue = computed(() => {
-    const value = this.date();
-    return value !== null && !isNaN(value.getTime());
-  });
+  /** バリデーションを提供するサービス */
+  validator = inject(SampleFormValidator);
 }

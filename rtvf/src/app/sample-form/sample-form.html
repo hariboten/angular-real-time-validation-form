@@ -1,11 +1,11 @@
 <form (ngSubmit)="submit()">
   <fieldset>
     <legend>Sample Form</legend>
-    <app-labeled-input label="Title" [required]="true" [filled]="hasTitleValue()">
-      <app-text-input name="title" [(value)]="title" placeholder="Enter title"></app-text-input>
+    <app-labeled-input label="Title" [required]="true" [filled]="validator.hasTitleValue()">
+      <app-text-input name="title" [(value)]="state.title" placeholder="Enter title"></app-text-input>
     </app-labeled-input>
-    <app-labeled-input label="Date" [required]="true" [filled]="hasDateValue()">
-      <app-date-input name="date" [(value)]="date"></app-date-input>
+    <app-labeled-input label="Date" [required]="true" [filled]="validator.hasDateValue()">
+      <app-date-input name="date" [(value)]="state.date"></app-date-input>
     </app-labeled-input>
   </fieldset>
   <app-button label="Submit" type="submit"></app-button>
