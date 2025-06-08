@@ -14,4 +14,8 @@ export class SampleFormValidator {
     const value = this.state.date();
     return value !== null && !isNaN(value.getTime());
   });
+
+  public isValid = computed(() => {
+    return this.hasTitleValue() && this.hasDateValue();
+  });
 }

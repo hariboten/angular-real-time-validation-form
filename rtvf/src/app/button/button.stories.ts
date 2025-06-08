@@ -6,8 +6,15 @@ export default {
   component: Button,
 } as Meta<Button>;
 
-export const Default: StoryObj<Button> = {
+export const Button00Default: StoryObj<Button> = {
   args: {
     label: 'button',
+  },
+};
+
+export const Button01Disabled: StoryObj<Button> = {
+  args: {
+    label: 'disabled',
+    disabled: true,
   },
 };

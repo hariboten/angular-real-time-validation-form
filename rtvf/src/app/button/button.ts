@@ -9,6 +9,7 @@ import { Component, input, model, output } from '@angular/core';
 export class Button {
   label = input('');
   type = input<'button' | 'submit' | 'reset'>('button');
+  disabled = input<boolean>(false);
   value = input('');
   clicked = output<void>();
 }

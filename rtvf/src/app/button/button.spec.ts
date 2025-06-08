@@ -29,4 +29,19 @@ describe('Button', () => {
 
     expect(clicked).toBeTrue();
   });
+
+  it('should not be clicked when disabled', async () => {
+    const button = fixture.nativeElement.querySelector('button');
+    // disabledを設定
+    fixture.componentRef.setInput('disabled', true);
+    await fixture.whenStable();
+
+    let clicked = false;
+    component.clicked.subscribe(() => {
+      clicked = true;
+    });
+    button.click();
+
+    expect(clicked).toBeFalse();
+  });
 });

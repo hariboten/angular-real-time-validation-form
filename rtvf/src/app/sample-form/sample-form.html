@@ -8,5 +8,5 @@
       <app-date-input name="date" [(value)]="state.date"></app-date-input>
     </app-labeled-input>
   </fieldset>
-  <app-button label="Submit" type="submit"></app-button>
+  <app-button label="Submit" type="submit" [disabled]="!validator.isValid()"></app-button>
 </form>

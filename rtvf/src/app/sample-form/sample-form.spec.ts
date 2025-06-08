@@ -30,6 +30,9 @@ describe('SampleForm', () => {
     dateInput.value = '2023-10-01';
     dateInput.dispatchEvent(new Event('input'));
 
+    // 入力内容が反映されるのを待つ
+    await fixture.whenStable();
+
     // Submitボタンをクリック
     const submitButton = fixture.nativeElement.querySelector(
       'button[type="submit"]'
