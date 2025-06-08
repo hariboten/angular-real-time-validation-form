@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 export class DateInput {
   readonly name = input.required<string>();
   value = model<Date | null>(null);
-  readonly required = input<boolean>(false);
 
   setValue(date: Date | null) {
     this.value.set(date);
