@@ -8,7 +8,8 @@ import { RequiredMark } from '../required-mark/required-mark';
   styleUrl: './labeled-input.scss',
 })
 export class LabeledInput {
-  readonly label = input.required<string>();
-  readonly required = input<boolean>(false);
-  readonly filled = input<boolean>(false);
+  label = input.required<string>();
+  required = input<boolean>(false);
+  filled = input<boolean>(false);
+  errorMessages = input<string[]>([]);
 }

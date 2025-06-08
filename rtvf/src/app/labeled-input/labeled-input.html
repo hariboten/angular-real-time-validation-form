@@ -4,4 +4,7 @@
 <div>
   <app-required-mark [required]="required()" [filled]="filled()"></app-required-mark>
   <ng-content></ng-content>
+  @for (msg of errorMessages(); track msg) {
+  <div class="error-message">{{ msg }}</div>
+  }
 </div>

@@ -1,10 +1,10 @@
 <form (ngSubmit)="submit()">
   <fieldset>
     <legend>Sample Form</legend>
-    <app-labeled-input label="Title" [required]="true" [filled]="validator.hasTitleValue()">
+    <app-labeled-input label="Title" [required]="true" [filled]="validator.hasTitleValue()" [errorMessages]="validator.titleErrorMessages()">
       <app-text-input name="title" [(value)]="state.title" placeholder="Enter title"></app-text-input>
     </app-labeled-input>
-    <app-labeled-input label="Date" [required]="true" [filled]="validator.hasDateValue()">
+    <app-labeled-input label="Date" [required]="true" [filled]="validator.hasDateValue()" [errorMessages]="validator.dateErrorMessages()">
       <app-date-input name="date" [(value)]="state.date"></app-date-input>
     </app-labeled-input>
   </fieldset>

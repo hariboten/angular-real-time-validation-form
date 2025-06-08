@@ -33,3 +33,18 @@ export const Labeled01Required: StoryObj<LabeledInput> = {
     label: 'Example Input',
   },
 };
+
+export const Labeled02ErrorMessage: StoryObj<LabeledInput> = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <app-labeled-input [label]="label" [errorMessages]="errorMessages">
+        <input type="text" placeholder="Enter text here" />
+      </app-labeled-input>
+    `,
+  }),
+  args: {
+    label: 'Error messages',
+    errorMessages: ['This field is required.', 'Invalid input format.'],
+  },
+};
